@@ -1,0 +1,118 @@
+name: "global services strategy"
+description: "global services strateg"
+version: "1.0.0"
+
+services:
+  - name: umarket
+    id: b2e5ca98-cf13-4621-86eb-cc771a29767c
+    scopes:
+      - production_scope_id: scp-011
+        name: production-backend-service-01
+        release_id: c7c1f8f0-7f62-4a84-9a56-0d2ab1a3e101
+        staging_scope_id: scp-021
+        parameters:
+          - parameter_name: LOG_LEVEL
+          - parameter_name: MAX_CONNECTIONS
+          - parameter_name: TIMEOUT_MS
+          - parameter_name: DATABASE_URL
+          - parameter_name: API_KEY
+          - parameter_name: RETRY_LIMIT
+      - production_scope_id: scp-012
+        name: production-backend-service-02
+        release_id: d5b02e9a-43c9-4e7e-9f91-10bdf0a7b202
+        staging_scope_id: scp-022
+        parameters:
+          - parameter_name: LOG_LEVEL
+          - parameter_name: MAX_CONNECTIONS
+          - parameter_name: TIMEOUT_MS
+          - parameter_name: DATABASE_URL
+          - parameter_name: API_KEY
+          - parameter_name: RETRY_LIMIT
+      - production_scope_id: scp-013
+        name: production-backend-service-03
+        release_id: e8ad4c3b-2f81-4c25-a3f5-67e13d51c303
+        staging_scope_id: scp-023
+        parameters:
+          - parameter_name: LOG_LEVEL
+          - parameter_name: MAX_CONNECTIONS
+          - parameter_name: TIMEOUT_MS
+          - parameter_name: DATABASE_URL
+          - parameter_name: API_KEY
+          - parameter_name: RETRY_LIMIT
+      - production_scope_id: scp-014
+        name: production-backend-service-04
+        release_id: c7c1f8f0-7f62-4a84-9a56-0d2ab1a3e101
+        staging_scope_id: scp-024
+        parameters:
+          - parameter_name: LOG_LEVEL
+          - parameter_name: MAX_CONNECTIONS
+          - parameter_name: TIMEOUT_MS
+          - parameter_name: DATABASE_URL
+          - parameter_name: API_KEY
+          - parameter_name: RETRY_LIMIT
+      - production_scope_id: scp-015
+        name: production-backend-service-05
+        release_id: d5b02e9a-43c9-4e7e-9f91-10bdf0a7b202
+        staging_scope_id: scp-025
+        parameters:
+          - parameter_name: LOG_LEVEL
+          - parameter_name: MAX_CONNECTIONS
+          - parameter_name: TIMEOUT_MS
+          - parameter_name: DATABASE_URL
+          - parameter_name: API_KEY
+          - parameter_name: RETRY_LIMIT
+      - production_scope_id: scp-016
+        name: production-backend-service-06
+        release_id: e8ad4c3b-2f81-4c25-a3f5-67e13d51c303
+        staging_scope_id: scp-026
+        parameters:
+          - parameter_name: LOG_LEVEL
+          - parameter_name: MAX_CONNECTIONS
+          - parameter_name: TIMEOUT_MS
+          - parameter_name: DATABASE_URL
+          - parameter_name: API_KEY
+          - parameter_name: RETRY_LIMIT
+      - production_scope_id: scp-017
+        name: production-backend-service-07
+        release_id: c7c1f8f0-7f62-4a84-9a56-0d2ab1a3e101
+        staging_scope_id: scp-027
+        parameters:
+          - parameter_name: LOG_LEVEL
+          - parameter_name: MAX_CONNECTIONS
+          - parameter_name: TIMEOUT_MS
+          - parameter_name: DATABASE_URL
+          - parameter_name: API_KEY
+          - parameter_name: RETRY_LIMIT
+      - production_scope_id: scp-018
+        name: production-backend-service-08
+        release_id: d5b02e9a-43c9-4e7e-9f91-10bdf0a7b202
+        staging_scope_id: scp-028
+        parameters:
+          - parameter_name: LOG_LEVEL
+          - parameter_name: MAX_CONNECTIONS
+          - parameter_name: TIMEOUT_MS
+          - parameter_name: DATABASE_URL
+          - parameter_name: API_KEY
+          - parameter_name: RETRY_LIMIT
+      - production_scope_id: scp-019
+        name: production-backend-service-09
+        release_id: e8ad4c3b-2f81-4c25-a3f5-67e13d51c303
+        staging_scope_id: scp-029
+        parameters:
+          - parameter_name: LOG_LEVEL
+          - parameter_name: MAX_CONNECTIONS
+          - parameter_name: TIMEOUT_MS
+          - parameter_name: DATABASE_URL
+          - parameter_name: API_KEY
+          - parameter_name: RETRY_LIMIT
+      - production_scope_id: scp-020
+        name: production-backend-service-10
+        release_id: c7c1f8f0-7f62-4a84-9a56-0d2ab1a3e101
+        staging_scope_id: scp-030
+        parameters:
+          - parameter_name: LOG_LEVEL
+          - parameter_name: MAX_CONNECTIONS
+          - parameter_name: TIMEOUT_MS
+          - parameter_name: DATABASE_URL
+          - parameter_name: API_KEY
+          - parameter_name: RETRY_LIMIT

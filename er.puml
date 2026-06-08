@@ -1,0 +1,87 @@
+@startuml delivery-platform-mock
+!theme plain
+hide circle
+skinparam linetype ortho
+
+' Enumerators / Constraints Definition
+enum ScopeStatus {
+    active
+    deactivated
+}
+
+enum ReleaseStatus {
+    ready-to-deploy
+}
+
+enum DeploymentStatus {
+    in-progress
+    finishing
+    finished-ok
+    finished-fail
+}
+
+enum EnvironmentType {
+    production
+    development
+    staging
+}
+
+entity "Applications" as applications {
+    * id : uuid <<PK>>
+    --
+    * name : string
+}
+
+entity "Scopes" as scopes {
+    * id : string <<PK>>
+    --
+    * name : string
+    * type : string
+    * environment : EnvironmentType <<Constraint>>
+    * application_id : uuid <<FK>>
+    * active_deployment_id : uuid <<FK>>
+    * status : ScopeStatus <<Constraint>>
+    * in_progress_deployment : bool
+    * in_progress_deployment_id : uuid <<FK>>
+}
+
+entity "Releases" as releases {
+    * release_id : uuid <<PK>>
+    --
+    * application_id : uuid <<FK>>
+    * build_id : uuid
+    * semver : string
+    * status : ReleaseStatus <<Constraint>>
+}
+
+entity "Deployments" as deployments {
+    * deployment_id : uuid <<PK>>
+    --
+    * release_id : uuid <<FK>>
+    * scope_id : string <<FK>>
+    * status : DeploymentStatus <<Constraint>>
+}
+
+entity "Parameters" as parameters {
+    * name : string <<PK>>
+    * environment : EnvironmentType <<PK>> <<Constraint>>
+    * application_id : uuid <<FK>>
+    --
+    * vault_id : uuid
+}
+
+' Relationships (Translated to English)
+applications ||--o{ scopes : "has"
+applications ||--o{ parameters : "owns"
+applications ||--o{ releases : "releases"
+releases ||--o{ deployments : "is deployed in"
+scopes ||--o{ deployments : "receives"
+
+' Visual links to Enums for documentation
+scopes .right.> ScopeStatus
+scopes .left.> EnvironmentType
+releases .right.> ReleaseStatus
+deployments .right.> DeploymentStatus
+parameters .up.> EnvironmentType
+
+@endum
